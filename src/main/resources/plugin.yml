@@ -1,0 +1,30 @@
+name: BarterShop
+version: ${project.version}
+main: dev.bartershop.BarterShopPlugin
+api-version: '1.21'
+authors: [BarterShop]
+description: GUI-first item-for-item chest shops with multi-chest storage, multi-item payments, expiring offers and statistics.
+
+commands:
+  shop:
+    description: Open the BarterShop GUI (your shops or a customer-facing entry point)
+    usage: /shop [help|language <en|de>|admin|reload]
+    aliases: [bartershop, barters]
+  shopadmin:
+    description: Open the BarterShop administration GUI
+    usage: /shopadmin [scan|signs|maintenance <on|off|toggle>|reload]
+    permission: bartershop.admin
+
+permissions:
+  bartershop.use:
+    description: Use customer-facing shop GUIs and trade
+    default: true
+  bartershop.create:
+    description: Create shops from a [shop] sign and an empty chest
+    default: true
+  bartershop.admin:
+    description: Administrative shop GUI, relinking, deletion and audit access
+    default: op
+  bartershop.shops.unlimited:
+    description: Bypass the configured per-player shop limit
+    default: false

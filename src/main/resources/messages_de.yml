@@ -1,0 +1,587 @@
+# BarterShop – vollständige deutsche Nachrichten.
+# Serverspezifische Änderungen gehören in diese Datei.
+
+prefix: '<gradient:#ffcc33:#ff8800><bold>BarterShop</bold></gradient> <dark_gray>»</dark_gray> '
+general:
+  no-permission: <red>Dazu hast du keine Berechtigung.
+command:
+  gui-only: <red>Dieser Befehl öffnet eine Oberfläche und kann nur im Spiel verwendet werden.
+  admin-gui-only: <red>Die Admin-Oberfläche kann nur im Spiel geöffnet werden. Nutze in der Konsole /shopadmin scan oder /shopadmin reload.
+  language-players-only: <red>Nur Spieler können eine Oberflächensprache wählen.
+  language-usage: '<yellow>Verwendung: /shop language <en|de>'
+  language-unknown: '<red>Unbekannte Sprache: <white><language></white>. Nutze en oder de.'
+  language-set: <green>Sprache auf <white><language></white> geändert.
+error:
+  database: <red>Die Shop-Datenbank konnte nicht aktualisiert werden. Es wurde nichts abgebucht; bitte versuche es erneut.
+  generic: <red>Diese Aktion konnte nicht abgeschlossen werden.
+  inventory-changed: <red>Dein Inventar hat sich während der Transaktion geändert. Es wurde nichts verschoben; bitte versuche es erneut.
+  shop-missing: <red>Dieser Shop existiert nicht mehr.
+  rate-limit: <red>Zu viele Aktionen in kurzer Zeit. Bitte warte einen Moment.
+shop:
+  created: <green>Shop erstellt. Lege Angebote an und fülle dann die Artikel ein, die Kunden erhalten sollen.
+  orphaned-notify: <red>Dein Shop <white><shop></white> hat seine Truhe oder sein Schild bei <white><chest></white> verloren. Der Handel ist pausiert; öffne die Shop-Oberfläche und verknüpfe den fehlenden Anker neu.
+  orphaned-join: <red>Bei <white><count></white> deiner Shops fehlt eine Truhe oder ein Schild. Öffne /shop, wähle den Shop und verknüpfe ihn in den Einstellungen neu.
+  deleted: <green>Shop gelöscht. Bestand und ausstehende Erlöse wurden in „Gefundene Gegenstände“ in deinem Shop-Menü verschoben.
+  disabled: <red>Dieser Shop ist deaktiviert.
+  unavailable: <red>Dieser Shop ist derzeit nicht verfügbar. Der Besitzer wurde gebeten, die Truhe neu zu verknüpfen.
+  chest-selected: <green>Truhe verknüpft. Prüfe die Einrichtung und bestätige.
+  chest-relinked: <green>Shop-Truhe neu verknüpft.
+  relink-select: <yellow>Rechtsklick auf die neue leere Truhe, um sie zu verknüpfen. Sneak + Rechtsklick in die Luft bricht ab.
+  relink-failed: <red>Diese Truhe kann nicht verknüpft werden. Sie muss leer, nicht beansprucht und gleich groß wie die ursprüngliche Truhe sein.
+  create:
+    limit: <red>Du hast dein Shop-Limit erreicht.
+    invalid: <red>Dieses Schild-Truhen-Paar ist für einen Shop ungültig.
+    sign-occupied: <red>Dieses Schild gehört bereits zu einem Shop.
+    chest-occupied: <red>Diese Truhe gehört bereits zu einem Shop.
+    chest-not-empty: <red>Die Truhe muss vollständig leer sein, bevor sie zu einem Shop werden kann.
+    claimed: <red>Dieses Schild wurde von einem anderen Spieler beansprucht.
+    capacity: <red>Die neue Truhe bietet nicht genug Platz für die bereits eingelagerten Gegenstände.
+    world: <red>In dieser Welt können keine Shops erstellt werden.
+    too-far: <red>Stehe höchstens 8 Blöcke von Schild und Truhe entfernt.
+  chest-added: <green>Zusätzliche Truhe verknüpft. Die Lagerkapazität wurde erhöht.
+  chest-add-failed: <red>Diese Truhe kann nicht verknüpft werden. Sie muss leer, nicht beansprucht und noch nicht Teil dieses Shops sein.
+  chest-add-select: <yellow>Rechtsklick auf eine leere, nicht beanspruchte Truhe, um Lagerplatz hinzuzufügen. Sneak + Rechtsklick in die Luft bricht ab.
+  chest-capacity: <red>Diese Änderung würde zu wenig Platz für den bereits eingelagerten Bestand lassen.
+  last-chest: <red>Ein Shop muss mindestens eine verknüpfte Truhe behalten.
+  chest-remove-failed: <red>Diese Truhe konnte nicht getrennt werden.
+sign:
+  claimed: <red>Dieses Schild gehört zur Shop-Einrichtung eines anderen Spielers.
+  protected: <red>Dies ist ein Shop-Schild. Verwalte oder lösche den Shop über die Shop-Oberfläche.
+  relinked: <green>Shop-Schild neu verknüpft.
+  relink-select: <yellow>Platziere ein Schild und schreibe [shop] in die erste Zeile, um es mit diesem Shop zu verknüpfen.
+  relink-failed: <red>Dieses Schild kann nicht mit diesem Shop verknüpft werden.
+  status:
+    disabled: <red>Deaktiviert
+    maintenance: <red>Wartung
+    unavailable: <red>Nicht verfügbar
+    no-offers: <red>Keine Angebote
+    expired: <red>Abgelaufen
+    out-of-stock: <red>NICHT VORRÄTIG
+  line:
+    offers: <count> Angebote
+    items: <count> Sorten
+  hint:
+    sell: VERKAUF · Klick
+    buy: ANKAUF · Klick
+    browse: Shop öffnen
+    info: Klick für Info
+setup:
+  cancelled: <yellow>Shop-Einrichtung abgebrochen.
+  expired: <red>Diese Einrichtungssitzung ist abgelaufen. Rechtsklick auf das [shop]-Schild, um fortzufahren.
+  no-chest: <red>Wähle zuerst eine leere Truhe.
+  select-chest: <yellow>Rechtsklick auf die leere Truhe, die du verwenden möchtest. Sneak + Rechtsklick in die Luft bricht ab.
+offer:
+  limit: <red>Dieser Shop hat bereits das Maximum von <limit> Angeboten.
+  amount-limit: <red>Mengen müssen zwischen 1 und <limit> liegen.
+  incomplete: <red>Wähle den Liefergegenstand, seine Menge und mindestens einen Zahlungsgegenstand.
+  invalid-item: <red>Dieser Gegenstand kann nicht verwendet werden.
+  saved: <green>Angebot gespeichert.
+  payment-limit: <red>Ein Angebot kann höchstens <limit> verschiedene Gegenstandsarten verlangen.
+stock:
+  deposited: <green><white><amount>x <item></white> in den Shop-Bestand eingelagert.
+  withdrew: <green><white><amount>x <item></white> entnommen.
+  full: <red>Der Shop-Bestand ist voll. Entnehme Gegenstände oder verknüpfe eine weitere Truhe.
+  empty-hand: <red>Klicke auf einen nicht leeren Stapel in deinem Inventar.
+  warning-threshold: <gray>Warnschwelle für niedrigen Bestand auf <white><count></white> gesetzt.<gray> 0 deaktiviert Warnungen.
+  warning: <gold>Niedriger Bestand:</gold> <white><shop></white> hat nur noch <white><stock></white> von <white><item></white> (Warnung bei <white><threshold></white>).
+proceeds:
+  collected: <green><white><amount></white> Gegenstände eingesammelt. <gray><remaining> Gegenstand/Gegenstände bleiben ausstehend.
+  collected-all: <green><white><amount></white> Gegenstände aus <white><entries></white> Einträgen eingesammelt.
+  collected-all-partial: <yellow><white><amount></white> Gegenstände aus <white><entries></white> Einträgen eingesammelt. <gray>Einige Gegenstände bleiben, weil dein Inventar voll ist.
+  busy: <red>Eine andere Abholung läuft bereits. Bitte versuche es erneut.
+  inventory-full: <red>Dein Inventar hat keinen Platz für diese Gegenstände. Es wurde nichts entnommen; schaffe Platz und versuche es erneut.
+  nothing: <gray>Derzeit sind keine ausstehenden Erlöse zum Einsammeln vorhanden.
+mailbox:
+  empty: <gray>Keine gefundenen Gegenstände warten auf dich.
+notify:
+  header: <gold>Du hast <white><total></white> Gegenstand/Gegenstände in <white><shops></white> Shop(s) liegen.
+  entry: '<gray> • <white><shop></white><gray>: <white><count></white> Gegenstand/Gegenstände <dark_gray>(<items>)</dark_gray>'
+  more: <gray> • …und <white><count></white> weitere Shops.
+  items-more: ', +<count> weitere'
+  footer: <yellow>Diese Gegenstände sind gespeichert, aber noch nicht ausgeliefert. Öffne <white>/shop</white> und nutze <white>Ausstehende Erlöse</white> oder <white>Gefundene Gegenstände</white>, um sie abzuholen.
+trade:
+  success: <green><white><pay></white> gegen <white><receive></white> getauscht.
+  failed:
+    disabled: <red>Dieser Shop ist deaktiviert.
+    orphaned: <red>Die Truhe dieses Shops fehlt. Der Besitzer muss sie in den Shop-Einstellungen neu verknüpfen.
+    offer-missing: <red>Dieses Angebot existiert nicht mehr.
+    owner: <red>Du kannst nicht mit deinem eigenen Shop handeln.
+    payment: <red>Du besitzt nicht alle benötigten Zahlungsgegenstände.
+    inventory-full: <red>Dein Inventar kann die Gegenstände aus diesem Tausch nicht aufnehmen.
+    out-of-stock: <red>Der Shop hat nicht genug Bestand für diesen Tausch.
+    storage-full: <red>Der Shop-Bestand ist voll und kann deine Gegenstände nicht aufnehmen.
+    busy: <red>Es läuft bereits eine Transaktion. Bitte warte einen Moment.
+    cursor: <red>Lege den Gegenstand auf deinem Cursor zuerst zurück in dein Inventar.
+    gamemode: <red>In diesem Spielmodus ist Handeln nicht erlaubt.
+    internal: <red>Die Transaktion konnte nicht abgeschlossen werden. Es wurde nichts geändert.
+    expired: <red>Dieses Angebot ist abgelaufen.
+    maintenance: <red>Der Handel ist wegen Wartung vorübergehend deaktiviert. Bitte versuche es später erneut.
+protect:
+  chest: <red>Diese Truhe ist ein Shop-Container. Nutze stattdessen die Shop-Oberfläche.
+  sign: <red>Dieses Schild ist durch einen Shop geschützt. Verwalte oder lösche den Shop über die Shop-Oberfläche.
+  sign-support: <red>Dieser Block trägt ein Shop-Schild und kann nicht abgebaut werden.
+  double-chest: <red>Eine Truhe kann nicht mit einer Shop-Truhe verbunden werden.
+  unknown-shop: <red>Dieser Block ist einem fehlenden Shop zugeordnet. Ein Administrator muss den Shop-Datensatz reparieren oder entfernen.
+admin:
+  scan-done: <green>Ankerprüfung abgeschlossen. <white><count></white> Shop(s) müssen neu verknüpft werden.
+  reloaded: <green>Konfiguration und Nachrichten neu geladen. Starte den Server neu, damit startbezogene Einstellungen wirksam werden.
+  maintenance-usage: '<red>Verwendung: /shopadmin maintenance <on|off|toggle>'
+  maintenance-set: <green>Der Wartungsmodus ist jetzt <white><state></white>.
+  maintenance-state-on: <red>AN
+  maintenance-state-off: <green>AUS
+  signs-refreshed: <green>Shop-Anker geprüft und Schildtexte aktualisiert.
+gui:
+  back: <yellow>Zurück
+  close: <red>Schließen
+  confirm:
+    title: <gold>Bestätigen
+    prompt: <yellow>Bitte bestätigen
+    'yes': <green>Ja, fortfahren
+    yes-lore: <gray>Führt die Aktion aus.
+    'no': <red>Nein, zurück
+    no-lore: <gray>Es wird nichts geändert.
+    action: <green>Bestätigen
+  cancel: <red>Abbrechen
+  previous: <yellow>Vorherige Seite
+  next: <yellow>Nächste Seite
+  page: <gray>Seite <page>
+  shops:
+    title: <gold>Meine Shops
+    info: <gold>BarterShop
+    info-lore: <gray>Truhen-Shops mit reinem Tauschhandel.
+    owner: '<gray>Besitzer: <white><owner>'
+    location: '<gray>Truhe: <white><world> <x>, <y>, <z>'
+    offers: '<gray>Angebote: <white><count>'
+    stock: '<gray>Bestandsplätze: <white><used></white><gray>/<white><capacity>'
+    pending: '<gray>Ausstehende Gegenstände: <white><count>'
+    enabled: <green>Aktiv
+    disabled: <red>Deaktiviert
+    orphaned: <red>Ankerblock fehlt — in den Einstellungen neu verknüpfen
+    click: <yellow>Klicken zum Verwalten
+    create: <green>Shop erstellen
+    create-lore: <gray>Beginne mit einem Schild mit [shop] in Zeile 1.
+    recovered: <gold>Gefundene Gegenstände
+    recovered-lore: <gray>Bestand und Erlöse aus gelöschten Shops.
+    admin: <red>Admin-Werkzeuge
+    admin-lore: <gray>Shop-Übersicht, Ankerprüfung und Audit-Protokoll.
+    empty: <gray>Noch keine Shops
+    empty-lore: <gray>Nutze die Anleitung „Shop erstellen“, um anzufangen.
+    language: <yellow>Sprache
+    language-lore: '<gray>Aktuell: <white><language>'
+    transfers: <yellow>Übertragungsanfragen
+    transfers-lore: <gray>Eingehende und ausgehende Eigentümerwechsel ansehen.
+    proceeds: <gold>Ausstehende Erlöse
+    proceeds-lore: <gray>Alle Shops in einer Übersicht.
+    trades: '<gray>Tauschvorgänge: <white><count>'
+  create:
+    title: <gold>Shop erstellen
+    sign: <yellow>1. Schild aufstellen
+    sign-lore1: <gray>Schreibe <white>[shop]</white> in die erste Zeile.
+    sign-lore2: <gray>Stehende Schilder müssen auf der Truhe stehen;
+    sign-lore3: <gray>Wandschilder werden direkt an der Truhe befestigt.
+    chest: <yellow>2. Leere Truhe verwenden
+    chest-lore1: <gray>Die Truhe muss vollständig leer sein.
+    chest-lore2: <gray>Ihre Größe bestimmt die Lagerplätze des Shops.
+    chest-lore3: <gray>Du öffnest die Truhe danach nie wieder.
+    gui: <yellow>3. In Oberflächen einrichten
+    gui-lore1: <gray>Gegenstände, genaue Mengen, Kauf-/Verkaufsmodus
+    gui-lore2: <gray>und Vergleichsregeln nur per Klick festlegen.
+    gui-lore3: <gray>Es werden keine Spezialgegenstände oder Chat-Befehle benötigt.
+    tips: <gold>Gut zu wissen
+    tip1: <gray>Nur du kannst den Shop bearbeiten.
+    tip2: <gray>Trichter und andere Spieler können die Truhe nicht berühren.
+    tip3: <gray>Angebotene Gegenstände müssen in den Bestand eingelagert werden.
+    tip4: <gray>Erlöse werden über ausstehende Erlöse abgeholt.
+  setup:
+    title: <gold>Shop-Einrichtung
+    info: <gold>Shop-Einrichtung
+    info1: <gray>1. Eine leere Truhe verknüpfen.
+    info2: <gray>2. Bestätigen, um den Shop zu erstellen.
+    info3: <gray>3. Angebote anlegen und Bestand einlagern.
+    info4: <gray>Das Schild öffnet nur diese Oberfläche.
+    sign: <yellow>Shop-Schild
+    sign-lore: '<gray>Schild: <white><sign>'
+    chest: <yellow>Shop-Truhe
+    chest-none: <red>Noch keine Truhe verknüpft.
+    chest-linked: '<gray>Truhe: <white><chest>'
+    chest-capacity: <gray>Leere Truhe erforderlich; die Größe bestimmt die Kapazität.
+    chest-click: <yellow>Klicken, um eine Truhe auszuwählen.
+    confirm: <green>Shop erstellen
+    confirm-lore: <gray>Erstellt den Shop mit der verknüpften Truhe.
+    confirm-no-chest: <gray>Verknüpfe zuerst eine Truhe.
+    cancel: <red>Einrichtung abbrechen
+    cancel-lore: <gray>Die Schildbeanspruchung bleibt 7 Tage bestehen.
+  hub:
+    title: <gold>Shop
+    info-owner: '<gray>Besitzer: <white><owner>'
+    info-location: '<gray>Truhe: <white><world> <x>, <y>, <z>'
+    orphaned: <red>Truhen-/Schildanker fehlt — in den Einstellungen neu verknüpfen.
+    orphaned-title: <red>Fehlender Anker
+    orphaned-lore: <gray>Der Handel ist pausiert, bis die Truhe neu verknüpft ist.
+    orphaned-lore2: <gray>Dein Bestand ist sicher in der Datenbank.
+    admin-mode: '<red>Admin-Ansicht: Aktionen werden protokolliert.'
+    offers: <yellow>Tauschangebote
+    offers-lore: <gray><count> Angebot(e). Kunden sehen diese.
+    stock: <yellow>Shop-Bestand
+    stock-lore: '<gray>Plätze: <white><used></white><gray>/<white><capacity>'
+    stock-lore2: <gray>Lagere Gegenstände ein, die Kunden erhalten.
+    proceeds: <gold>Ausstehende Erlöse
+    proceeds-lore: <gray><count> Gegenstand/Gegenstände warten auf Abholung.
+    settings: <yellow>Einstellungen
+    settings-lore: <gray>Aktivieren, verknüpfen, übertragen oder löschen.
+    history: <yellow>Transaktionsverlauf
+    history-lore: <gray>Letzte Tauschvorgänge, Abholungen und Änderungen.
+    preview: <aqua>Kundenansicht ansehen
+    preview-lore: <gray>Sieh genau, was Kunden sehen.
+    info-chests: '<gray>Truhen: <white><count></white><gray> · Plätze: <white><capacity>'
+    warning-threshold: '<gray>Warnung bei niedrigem Bestand: <white><count>'
+    info-sign-none: '<gray>Schild: <red>nicht verknüpft'
+    maintenance: <red>Der globale Wartungsmodus ist aktiv.
+    chests: <yellow>Verknüpfte Truhen
+    chests-lore: <gray><count> Truhe(n) bilden den Shop-Speicher.
+    stats: <gold>Statistiken
+    stats-lore: <gray><trades> abgeschlossene Tauschvorgänge.
+  offers:
+    title: <gold>Tauschangebote
+    mode: '<gray>Modus: <white><mode>'
+    pay: '<gray>Kunde zahlt: <white><amount>x <item>'
+    receive: '<gray>Kunde erhält: <white><amount>x <item>'
+    stock: '<gray>Bestand: <white><stock></white> <gray>(benötigt <white><needed></white>)'
+    matching: '<gray>Zahlungsvergleich: <white><mode>'
+    click-edit: <yellow>Klicken zum Bearbeiten
+    empty: <gray>Noch keine Angebote
+    empty-lore: <gray>Lege ein Angebot an und lagere dann die Gegenstände ein.
+    add: <green>Angebot hinzufügen
+    add-lore: <gray>Einen Tauschgegenstand-gegen-Gegenstand einrichten.
+    expired: <red>Abgelaufen am <white><time></white>
+    expires: '<gray>Läuft ab: <white><time>'
+    low-stock: <red>Warnung bei niedrigem Bestand ist aktiv.
+  offer-editor:
+    title-new: <gold>Neues Angebot
+    title-edit: <gold>Angebot bearbeiten
+    info: <gold>Angebot konfigurieren
+    info1: '<gray>VERKAUF: Der Kunde zahlt dir; die Zahlung wird'
+    info2: '<gray>zu ausstehendem Erlös. KAUF: Die Gegenstände des Kunden'
+    info3: <gray>gehen in den Bestand und du zahlst daraus.
+    mode: '<yellow>Modus: <white><mode>'
+    mode-lore: '<gray>Verkaufen: Du lieferst den Empfangsgegenstand.'
+    mode-lore2: '<gray>Kaufen: Du lieferst die Zahlungsgegenstände.'
+    mode-click: <yellow>Klicken, um den Modus zu wechseln
+    receive-item-none: <red>Kein Gegenstand ausgewählt
+    receive-amount: <yellow>Liefermenge
+    item-click: <yellow>Klicken, um den Gegenstand zu wählen.
+    amount-click: <yellow>Klicken, um die Menge zu ändern.
+    exact: <white>exakte Metadaten
+    any: <white>gleiches Material
+    matching: '<yellow>Zahlungsvergleich: <white><mode>'
+    matching-lore: '<gray>„Exakt“ verlangt dieselben Gegenstandskomponenten:'
+    matching-lore2: <gray>Verzauberungen, Name, Beschreibung, Schaden, Trankdaten, custom model data
+    matching-lore3: <gray>und persistente Daten.
+    save: <green>Angebot speichern
+    save-lore: <gray>Dieses Angebot prüfen und speichern.
+    save-incomplete: <red>Wähle zuerst alle Gegenstände aus.
+    delete: <red>Angebot löschen
+    delete-lore: <gray>Entfernt das Angebot; der Bestand bleibt unberührt.
+    delete-confirm: Dieses Angebot löschen? Kunden sehen es dann nicht mehr.
+    mode-sell: Verkaufen
+    mode-buy: Kaufen
+    payments: <yellow>Kunde zahlt <white>(<count>)
+    payments-none: <red>Keine Zahlungsgegenstände ausgewählt
+    payments-edit: <yellow>Klicken, um die Zahlungsanforderungen zu bearbeiten.
+    payment-line: <gray>• <white><amount>x <item>
+    expiry: '<yellow>Ablauf: <white><duration>'
+    expiry-lore: <gray>Abgelaufene Angebote können nicht gehandelt werden und löschen keinen Bestand.
+    expiry-click: <yellow>Klicken, um die nächste Dauer zu wählen.
+    expiry-never: <white>nie
+    expiry-hours: <white><hours> Stunde(n)
+  amount:
+    title: <gold>Menge wählen
+    current: '<yellow>Menge: <white><amount>'
+    current-lore: <gray>≈ <white><stacks></white> Stapel à 64
+    minus64: <red>-64
+    minus16: <red>-16
+    minus1: <red>-1
+    plus1: <green>+1
+    plus16: <green>+16
+    plus64: <green>+64
+    set1: <yellow>1 setzen
+    set16: <yellow>16 setzen
+    set64: <yellow>64 setzen
+    set576: <yellow>576 setzen (9 Stapel)
+    set1728: <yellow>1728 setzen (27 Stapel)
+    setmax: <yellow>Maximum setzen (<amount>)
+    click: <gray>Klicken zum Übernehmen.
+    confirm-lore: <gray><white><amount></white> Gegenstände verwenden.
+  picker:
+    title: <gold>Gegenstand wählen
+    inventory: <yellow>Aus deinem Inventar wählen
+    inventory-lore1: <gray>Klicke auf einen Gegenstand in deinem Inventar.
+    inventory-lore2: <gray>Der Gegenstand wird nicht verbraucht oder verschoben.
+    inventory-lore3: <gray>Die Stapelgröße wird als Menge vorgeschlagen.
+    catalog-click: <yellow>Klicken, um dieses Material auszuwählen.
+    toggle: '<yellow>Quelle: <white><mode>'
+    toggle-lore: <gray>Zwischen Inventar und Katalog wechseln.
+    mode-catalog: <white>Katalog
+    mode-inventory: <white>mein Inventar
+  customer:
+    title: <gold>Shop
+    owner: '<gray>Besitzer: <white><owner>'
+    trades: '<gray>Angebote: <white><count>'
+    info-lore: <gray>Alle Tauschvorgänge sind reiner Gegenstandstausch.
+    orphaned: <red>Dieser Shop ist vorübergehend nicht verfügbar.
+    unavailable: <red>Shop nicht verfügbar
+    mode: '<gray>Modus: <white><mode>'
+    pay: '<gray>Du zahlst: <white><amount>x <item>'
+    receive: '<gray>Du erhältst: <white><amount>x <item>'
+    matching: '<gray>Zahlungsvergleich: <white><mode>'
+    click: <yellow>Klicken, um diesen Tausch zu prüfen.
+    out-of-stock: <red>Nicht vorrätig
+    empty: <gray>Keine Angebote
+    empty-lore: <gray>Der Besitzer hat noch keinen Tausch eingerichtet.
+    available: '<gray>Verfügbar: <white><stock>'
+    expires: '<gray>Läuft ab: <white><time>'
+    expired: <red>Abgelaufen
+    expired-action: <red>Dieses Angebot kann nicht mehr gehandelt werden.
+    maintenance: <red>Der Handel ist vorübergehend deaktiviert.
+  trade-confirm:
+    title: <gold>Tausch bestätigen
+    pay-lore: <gray>Du gibst <white><amount></white> davon ab.
+    receive-lore: <gray>Du erhältst <white><amount></white> davon.
+    arrow: <yellow>Tausch
+    arrow-lore: <gray>Gegenstände werden direkt zwischen Inventaren getauscht.
+    confirm: <green>Tausch bestätigen
+    confirm-lore: <gray>Zahlung und Lieferung erfolgen atomar.
+    owner: <red>Du kannst nicht mit deinem eigenen Shop handeln.
+    unavailable: <red>Dieser Tausch kann derzeit nicht abgeschlossen werden.
+    cancel: <red>Zurück
+    info: <yellow>Tauschübersicht
+    info-lore: <gray>Prüfe alle Gegenstände vor der Bestätigung.
+    info-sell: <gray>Du zahlst dem Besitzer und erhältst Shop-Bestand.
+    info-buy: <gray>Du lieferst Gegenstände und erhältst die Zahlung des Besitzers.
+    expires: '<gray>Gültig bis: <white><time>'
+    expired: <red>Dieses Angebot ist abgelaufen.
+  stock:
+    title: <gold>Shop-Bestand
+    capacity: <yellow>Lager
+    capacity-lore: '<gray>Belegte Plätze: <white><used></white><gray>/<white><capacity>'
+    capacity-lore2: '<gray>Gegenstände insgesamt: <white><items>'
+    stack-amount: '<gray>Menge: <white><amount>'
+    stack-withdraw-all: '<yellow>Linksklick: Stapel entnehmen'
+    stack-withdraw-one: '<yellow>Rechtsklick: einen entnehmen'
+    empty: <gray>Der Bestand ist leer
+    empty-lore: <gray>Lagere Gegenstände ein, die Kunden erhalten.
+    deposit: <green>Gegenstände einlagern
+    deposit-lore: <gray>Klicke Stapel in deinem Inventar an, um sie einzulagern.
+  deposit:
+    title: <gold>Bestand einlagern
+    info: <gold>Gegenstände zum Einlagern anklicken
+    lore1: <gray>Klicke einen Stapel in deinem Inventar an, um ihn einzulagern.
+    lore2: <gray>Gegenstände werden sicher in der Shop-Datenbank gespeichert.
+    lore3: <gray>Schließe diese Ansicht, wenn du fertig bist.
+    capacity: <yellow>Lager
+    capacity-lore: '<gray>Plätze: <white><used></white><gray>/<white><capacity></white> <gray>• Gegenstände: <white><items>'
+  proceeds:
+    title: <gold>Ausstehende Erlöse
+    stack-lore: '<gray>Menge: <white><amount>'
+    collect-hint: <yellow>Klicken, um alles Einsammelbare abzuholen.
+    collect: <green>Alles einsammeln
+    collect-lore1: <gray>Verschiebt so viele Gegenstände wie möglich in dein Inventar.
+    collect-lore2: <gray>Der Rest bleibt ausstehend. <white><items></white> Gegenstand/Gegenstände warten.
+    empty: <gray>Keine ausstehenden Erlöse
+    history: <yellow>Verlauf
+    history-lore: <gray>Tauschvorgänge und Abholungen ansehen.
+  mailbox:
+    title: <gold>Gefundene Gegenstände
+    item-lore: '<gray>Menge: <white><amount>'
+    collect: <green>Gefundene Gegenstände abholen
+    collect-lore1: <gray>Verschiebt Gegenstände in dein Inventar.
+    collect-lore2: <gray>Was nicht hineinpasst, bleibt hier.
+    history: <yellow>Verlauf
+    history-lore: <gray>Wiederherstellungen und Abholungen ansehen.
+  settings:
+    title: <gold>Shop-Einstellungen
+    info: <yellow>Shop-Einstellungen
+    info-lore: '<gray>Besitzer: <white><owner>'
+    enabled: <green>aktiviert
+    disabled: <red>deaktiviert
+    toggle: <yellow>Shop ist <white><state>
+    toggle-lore: <yellow>Klicken, um festzulegen, ob Kunden handeln können.
+    relink-sign: <yellow>Schild neu verknüpfen
+    relink-sign-lore1: <gray>Nutze dies, wenn das Shop-Schild verloren ging.
+    relink-sign-lore2: <gray>Platziere ein Schild mit [shop] in Zeile 1.
+    transfer: <red>Eigentümerschaft übertragen
+    transfer-lore: <gray>Wähle einen Spieler; er muss zustimmen.
+    transfer-lore2: <gray>Ausstehende Erlöse bleiben beim derzeitigen Besitzer.
+    transfer-confirm: Eine Übertragungsanfrage für diesen Shop an <player> senden? Der Spieler muss zustimmen.
+    delete: <red>Shop löschen
+    delete-lore1: <gray>Bestand und ausstehende Erlöse wandern in
+    delete-lore2: <gray>deine Gefundenen Gegenstände.
+    delete-admin: <red>Admin-Löschung wird protokolliert; Gegenstände gehen an den Besitzer.
+    delete-owner: <gray>Dies kann nicht rückgängig gemacht werden.
+    delete-confirm: Diesen Shop löschen? Bestand und Erlöse bleiben in den Gefundenen Gegenständen erhalten.
+    chests: <yellow>Verknüpfte Truhen
+    chests-lore: <gray><count> von <max> Truhe(n). Klicken zum Verwalten.
+    warning: '<yellow>Warnungen bei niedrigem Bestand: <white><count>'
+    warning-lore: <gray>Benachrichtigt dich, wenn ein Artikel knapp wird. 0 deaktiviert.
+    warning-click: <yellow>Klicken, um die nächste Schwelle zu wählen.
+  players:
+    title: <gold>Spieler wählen
+    choose: <yellow>Klicken, um diesen Spieler zu wählen.
+    empty: <gray>Keine anderen Spieler online
+    empty-lore: <gray>Für eine Übertragung muss der Empfänger online sein.
+  history:
+    title: <gold>Transaktionsverlauf
+    time: <gray><time>
+    actor: '<gray>Von: <white><actor>'
+    empty: <gray>Noch kein Verlauf
+    type:
+      trade: <white>Tausch
+      collect: <gold>Abholung
+      stock: <yellow>Bestandsänderung
+      recovery: <aqua>Wiederherstellung
+      delete: <red>Löschung
+      transfer: <light_purple>Eigentümerwechsel
+      config: <yellow>Konfiguration
+      other: <white>Aktivität
+  audit:
+    title: <gold>Audit-Protokoll
+    actor: '<gray>Akteur: <white><actor>'
+    time: <gray><time>
+    empty: <gray>Keine Audit-Einträge
+  admin:
+    title: <gold>BarterShop-Administration
+    info: <gold>Administration
+    info-lore: '<gray>Geladene Shops: <white><count>'
+    shops: <yellow>Alle Shops
+    shops-lore: <gray>Jeden Shop ansehen, deaktivieren, neu verknüpfen oder löschen.
+    scan: <yellow>Anker prüfen
+    scan-lore: <gray>Truhen und Schilder prüfen; fehlende Anker markieren.
+    audit: <yellow>Audit-Protokoll
+    audit-lore: <gray>Privilegierte Aktionen werden aufgezeichnet.
+    recovery: <gold>Wiederherstellungsverfahren
+    recovery-lore1: <gray>Das Löschen eines Shops verwirft oder zerstört niemals Gegenstände.
+    recovery-lore2: <gray>Bestand und Erlöse wandern in die
+    recovery-lore3: <gray>Gefundenen Gegenstände des Besitzers.
+    recovery-lore4: <gray>Admins können keine Gegenstände aus Postfächern entnehmen.
+    rules: <yellow>Admin-Regeln
+    rules-lore1: <gray>Jede Übergehung wird berechtigungsgeprüft
+    rules-lore2: <gray>und im Audit-Protokoll aufgezeichnet.
+    rules-lore3: <gray>Verknüpfe eine fehlende Truhe neu, statt zu löschen,
+    rules-lore4: <gray>wann immer möglich; der Bestand bleibt erhalten.
+    shops-title: <gold>Alle Shops
+    shop-owner: '<gray>Besitzer: <white><owner>'
+    shop-location: '<gray>Truhe: <white><world> <x>, <y>, <z>'
+    shop-stock: '<gray>Bestandsplätze: <white><used></white><gray>/<white><capacity>'
+    shop-proceeds: '<gray>Ausstehende Gegenstände: <white><items>'
+    shop-orphaned: <red>Fehlender Anker
+    no-shops: <gray>Keine Shops geladen
+    maintenance: '<yellow>Wartung: <white><state>'
+    maintenance-on: <red>AN
+    maintenance-off: <green>AUS
+    maintenance-lore: <gray>Deaktiviert alle Tauschvorgänge global, ohne Daten zu verändern.
+    maintenance-click: <yellow>Klicken, um den Wartungsmodus umzuschalten.
+  payments:
+    title: <gold>Zahlungsanforderungen
+    info: <yellow>Was der Kunde zahlt
+    info-lore: <gray><count> von <max> Gegenstandsarten ausgewählt.
+    amount: '<gray>Menge: <white><amount>'
+    matching: '<gray>Vergleich: <white><mode>'
+    edit: <yellow>Klicken, um diese Anforderung zu bearbeiten.
+    empty: <gray>Noch keine Zahlungsgegenstände
+    empty-lore: <gray>Füge mindestens eine Gegenstandsart hinzu.
+    add: <green>Zahlungsgegenstand hinzufügen
+    add-lore: <gray>Wähle einen weiteren Gegenstand, den der Kunde liefern muss.
+    save: <green>Zahlungen übernehmen
+    save-lore: <gray>Zum Angebotseditor mit dieser Liste zurückkehren.
+  payment:
+    title: <gold>Zahlungsgegenstand bearbeiten
+    info: <yellow>Zahlungsanforderung
+    info-lore: <gray>Alle geforderten Gegenstände werden gemeinsam geprüft.
+    item-lore: <yellow>Klicken, um den Gegenstand zu ändern.
+    amount: '<yellow>Menge: <white><amount>'
+    amount-lore: <yellow>Klicken, um die geforderte Menge zu ändern.
+    matching: '<yellow>Vergleich: <white><mode>'
+    matching-lore: <gray>Exakt vergleicht Metadaten; locker vergleicht nur das Material.
+    remove: <red>Anforderung entfernen
+    remove-lore: <gray>Die anderen Anforderungen bleiben unverändert.
+    remove-confirm: Diese Zahlungsanforderung entfernen?
+    save-lore: <gray>Diese Anforderung übernehmen.
+  chests:
+    title: <gold>Verknüpfte Truhen
+    unit: <yellow>Truhe <number>
+    location: '<gray>Position: <white><world> <x>, <y>, <z>'
+    slots: <gray>Bietet <white><slots></white> Lagerplätze.
+    primary: <gray>Haupttruhe — kann hier nicht getrennt werden.
+    unlink-hint: <yellow>Klicken, um diese Truhe zu trennen.
+    unlink-confirm: Diese Truhe trennen? Eingelagerte Gegenstände bleiben im Shop, aber die Kapazität sinkt.
+    info: <yellow>Shop-Lager
+    info-lore: '<gray>Belegte Plätze: <white><used></white><gray>/<white><capacity>'
+    info-lore2: '<gray>Maximale Truhen: <white><max>'
+    relink-primary: <yellow>Haupttruhe ersetzen
+    relink-primary-lore: <gray>Eine neue leere Truhe als Hauptanker verwenden.
+    add: <green>Weitere Truhe verknüpfen
+    add-lore: <gray>Die Truhe muss leer und nicht beansprucht sein.
+  stats:
+    title: <gold>Shop-Statistiken
+    info: <gold>Aktivitätsübersicht
+    trades: '<gray>Abgeschlossene Tauschvorgänge: <white><count>'
+    items-in: '<gray>Erhaltene Gegenstände: <white><count>'
+    items-out: '<gray>Gelieferte Gegenstände: <white><count>'
+    customers: '<gray>Verschiedene Kunden: <white><count>'
+    last-trade: '<gray>Letzter Tausch: <white><time>'
+    no-trades: <gray>Noch keine Tauschvorgänge.
+    recent: <yellow>Letzte Aktivität
+    recent-lore: <gray>Den Transaktionsverlauf öffnen.
+  proceeds-overview:
+    title: <gold>Ausstehende Erlöse
+    info: <gold>Alle ausstehenden Gegenstände
+    info-lore: <gray><total> Gegenstand/Gegenstände in <shops> Einträgen.
+    amount: '<gray>Wartend: <white><count> Gegenstand/Gegenstände'
+    line: <gray>• <white><amount>x <item>
+    more: <gray>• …
+    mailbox-hint: <yellow>Klicken, um Gefundene Gegenstände zu öffnen.
+    mailbox-label: Gefundene Gegenstände
+    deleted-label: Gelöschter Shop
+    open-hint: <yellow>Klicken, um aus diesem Shop abzuholen.
+    empty: <gray>Nichts ausstehend
+    empty-lore: <gray>Abgeholte Gegenstände landen in deinem Inventar.
+    collect: <green>Alles abholen
+    collect-lore: <gray>Holt aus allen Shops und dem Postfach ab, sofern Platz ist.
+  transfers:
+    title: <gold>Übertragungsanfragen
+    shop: '<gray>Shop: <white><shop>'
+    from: '<gray>Vom Besitzer: <white><player>'
+    to: '<gray>An: <white><player>'
+    expires: '<gray>Gültig bis: <white><time>'
+    expired: <red>Abgelaufen
+    accept-hint: <green>Klicken, um die Eigentümerschaft anzunehmen.
+    cancel-hint: <yellow>Klicken, um diese Anfrage abzubrechen.
+    incoming: <green>Eingehende Übertragung
+    outgoing: <yellow>Ausgehende Übertragung
+    accept-confirm: <shop> von <player> annehmen? Bestand, Truhen und Statistiken werden übertragen; ausstehende Erlöse bleiben beim bisherigen Besitzer.
+    cancel-confirm: Die Übertragungsanfrage für <shop> abbrechen?
+    empty: <gray>Keine Übertragungsanfragen
+    empty-lore: <gray>Eingehende und ausgehende Anfragen erscheinen hier.
+  preferences:
+    title: <gold>Einstellungen
+    info: <gold>Deine Einstellungen
+    info-lore: <gray>Diese Einstellungen gelten nur für dich.
+    language: '<yellow>Sprache: <white><language>'
+    language-lore: <gray>Nachrichten und Oberflächen wechseln sofort.
+    language-click: <yellow>Klicken, um die Sprache zu wechseln.
+transfer:
+  requested: <gold><player></gold> möchte den Shop <white><shop></white> an dich übertragen. Öffne <white>/shop → Übertragungsanfragen</white>, um anzunehmen oder abzulehnen.
+  request-sent: <green>Übertragungsanfrage an <white><player></white> gesendet. Der Shop wechselt erst den Besitzer, wenn die Anfrage angenommen wird.
+  accepted: <green>Der Shop <white><shop></white> gehört jetzt dir. Bestand und verknüpfte Truhen wurden übernommen.
+  completed: <yellow><player></yellow> hat deine Übertragungsanfrage für <white><shop></white> angenommen. Ausstehende Erlöse wurden in die Gefundenen Gegenstände verschoben.
+  cancelled: <yellow>Übertragungsanfrage abgebrochen.
+  cancelled-other: <yellow>Die Übertragungsanfrage für <white><shop></white> wurde abgebrochen.
+  missing: <red>Diese Übertragungsanfrage existiert nicht mehr.
+  expired: <red>Diese Übertragungsanfrage ist abgelaufen.
+  stale: <red>Der Shop-Besitzer hat gewechselt; diese Anfrage ist nicht mehr gültig.
+  self: <red>Du kannst einen Shop nicht an seinen aktuellen Besitzer übertragen.
+  limit: <red>Du besitzt bereits das Maximum von <limit> Shops. Gib zuerst einen Platz frei.
+  pending-join: <gold>Du hast <white><count></white> offene Shop-Übertragungsanfrage(n). Öffne /shop und wähle Übertragungsanfragen.
+maintenance:
+  enabled: <red>Der Handel ist wegen Wartung vorübergehend deaktiviert. Shop-Verwaltung und das Abholen von Erlösen funktionieren weiterhin.
+  disabled: <green>Der Handel ist wieder verfügbar.

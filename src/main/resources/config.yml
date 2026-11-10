@@ -1,0 +1,74 @@
+# BarterShop configuration
+#
+# BarterShop is an items-only system. There is no currency, Vault hook or
+# virtual money setting anywhere in this plugin.
+#
+# Most values are read at startup. /shopadmin reload refreshes messages and
+# language files; restart for the remaining options.
+
+# Default language: en or de. Players can switch their own language in /shop.
+language: en
+
+# Global emergency switch. It can also be toggled in the admin GUI and is
+# stored in this file. Collection and shop management remain available.
+maintenance: false
+
+shop:
+  # First line of a sign that starts the GUI setup workflow. Keep this at 15
+  # characters or fewer so it fits on a sign; the remaining lines are written
+  # by the plugin with the shop's current offers and status.
+  sign-marker: "[shop]"
+
+  # Empty = every world. Otherwise shop creation is restricted to these worlds.
+  allowed-worlds: []
+
+  # Default limit. Grant bartershop.shops.unlimited to bypass.
+  max-shops-per-player: 5
+
+  # Maximum quantity for one side of an offer (54 stacks of 64 is the hard cap).
+  max-offer-amount: 3456
+
+  # Maximum offers per shop (45 = one page of icons).
+  max-offers-per-shop: 24
+
+  # Physical chest units linked to one shop. Each single chest adds 27 stock
+  # slots and each double chest adds 54, up to the hard cap of 8 units.
+  max-chests-per-shop: 4
+
+  # Owners cannot trade with their own shop by default.
+  allow-owner-trade: false
+
+  # Creative mode can duplicate items, so trading is denied there by default.
+  allow-creative-trades: false
+
+  # Join-time summary of pending proceeds.
+  notify-on-join: true
+  notification-item-types: 5
+
+  # Default warning threshold for a shop; 0 disables low-stock notifications.
+  # Owners can change it per shop in Settings.
+  default-low-stock-threshold: 8
+
+  # Offer expiry choices shown by the editor, in hours (0 = never).
+  offer-expiry-hours: [0, 1, 24, 168, 720]
+
+  # How long a pending ownership transfer stays valid.
+  transfer-expiry-minutes: 10080
+
+  # How long a transaction waits for a shop lock (milliseconds).
+  lock-timeout-ms: 2000
+
+  # Unclaimed [shop] signs are released after this many minutes.
+  sign-claim-expiry-minutes: 10080
+
+limits:
+  # Minimum gap between accepted GUI clicks per player.
+  click-debounce-ms: 120
+  max-clicks-per-second: 12
+  max-trades-per-minute: 30
+  max-offer-changes-per-minute: 30
+  max-transfer-requests-per-hour: 10
+
+database:
+  # Stored inside the plugin data folder. SQLite WAL + FULL synchronous is used.
+  file: shops.db

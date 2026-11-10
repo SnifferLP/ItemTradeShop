@@ -1,0 +1,587 @@
+# BarterShop English messages (complete defaults).
+# Server-specific overrides belong in messages.yml.
+
+prefix: '<gradient:#ffcc33:#ff8800><bold>BarterShop</bold></gradient> <dark_gray>»</dark_gray> '
+general:
+  no-permission: <red>You do not have permission to do that.
+command:
+  gui-only: <red>That command opens a GUI and can only be used in game.
+  admin-gui-only: <red>The admin GUI can only be opened in game. Use /shopadmin scan or /shopadmin reload from console.
+  language-players-only: <red>Only players can choose an interface language.
+  language-usage: '<yellow>Usage: /shop language <en|de>'
+  language-unknown: '<red>Unknown language: <white><language></white>. Use en or de.'
+  language-set: <green>Language changed to <white><language></white>.
+error:
+  database: <red>The shop database could not be updated. Nothing was charged; please try again.
+  generic: <red>That action could not be completed.
+  inventory-changed: <red>Your inventory changed during the transaction. Nothing was moved; please try again.
+  shop-missing: <red>That shop no longer exists.
+  rate-limit: <red>Too many actions in a short time. Please wait a moment.
+shop:
+  created: <green>Shop created. Add offers, then stock the items customers receive.
+  orphaned-notify: <red>Your shop <white><shop></white> lost its chest or sign anchor at <white><chest></white>. Trades are paused; open the shop GUI and relink the missing anchor.
+  orphaned-join: <red>You have <white><count></white> shop(s) with a missing chest or sign anchor. Open /shop, select the shop, and use Settings to relink it.
+  deleted: <green>Shop deleted. Its stock and pending proceeds were moved to Recovered Items in your shop menu.
+  disabled: <red>This shop is disabled.
+  unavailable: <red>This shop is unavailable right now. The owner has been advised to relink its chest.
+  chest-selected: <green>Chest linked. Review the setup screen and confirm.
+  chest-relinked: <green>Shop chest relinked.
+  relink-select: <yellow>Right-click the new empty chest to link it. Sneak + right-click air to cancel.
+  relink-failed: <red>That chest cannot be linked. It must be empty, unclaimed, and the same size as the original chest.
+  create:
+    limit: <red>You have reached your shop limit.
+    invalid: <red>That sign/chest pair is not valid for a shop.
+    sign-occupied: <red>This sign is already attached to a shop.
+    chest-occupied: <red>That chest already belongs to a shop.
+    chest-not-empty: <red>The chest must be completely empty before it can become a shop.
+    claimed: <red>This sign has been claimed by another player.
+    capacity: <red>The new chest does not provide enough storage for the items already in this shop.
+    world: <red>Shops cannot be created in this world.
+    too-far: <red>Stand within 8 blocks of both the sign and the chest.
+  chest-added: <green>Additional chest linked. Storage capacity increased.
+  chest-add-failed: <red>That chest cannot be linked. It must be empty, unclaimed and not already part of this shop.
+  chest-add-select: <yellow>Right-click an empty, unclaimed chest to add storage. Sneak + right-click air to cancel.
+  chest-capacity: <red>That change would leave too little capacity for the stock already stored.
+  last-chest: <red>A shop must keep at least one linked chest.
+  chest-remove-failed: <red>That chest could not be unlinked.
+sign:
+  claimed: <red>This sign belongs to another player's shop setup.
+  protected: <red>This is a shop sign. Use the shop GUI to manage or delete the shop.
+  relinked: <green>Shop sign relinked.
+  relink-select: <yellow>Place a sign and write [shop] on its first line to link it to this shop.
+  relink-failed: <red>That sign cannot be linked to this shop.
+  status:
+    disabled: <red>Disabled
+    maintenance: <red>Maintenance
+    unavailable: <red>Unavailable
+    no-offers: <red>No offers
+    expired: <red>Offers expired
+    out-of-stock: <red>OUT OF STOCK
+  line:
+    offers: <count> offers
+    items: <count> item types
+  hint:
+    sell: SELL · Click
+    buy: BUY · Click
+    browse: Click to browse
+    info: Click for info
+setup:
+  cancelled: <yellow>Shop setup cancelled.
+  expired: <red>That setup session expired. Right-click the [shop] sign to resume.
+  no-chest: <red>Select an empty chest first.
+  select-chest: <yellow>Right-click the empty chest you want to use. Sneak + right-click air to cancel.
+offer:
+  limit: <red>This shop already has the maximum of <limit> offers.
+  amount-limit: <red>Amounts must be between 1 and <limit>.
+  incomplete: <red>Select the receive item, its amount and at least one payment item before saving.
+  invalid-item: <red>That item cannot be used.
+  saved: <green>Offer saved.
+  payment-limit: <red>An offer can require at most <limit> different item types.
+stock:
+  deposited: <green>Deposited <white><amount>x <item></white> into shop stock.
+  withdrew: <green>Withdrew <white><amount>x <item></white>.
+  full: <red>Shop stock is full. Withdraw some items or use a larger chest.
+  empty-hand: <red>Click a non-empty stack in your inventory.
+  warning-threshold: <gray>Low-stock warning threshold set to <white><count></white>.<gray> 0 disables warnings.
+  warning: <gold>Low stock:</gold> <white><shop></white> has only <white><stock></white> of <white><item></white> (warning at <white><threshold></white>).
+proceeds:
+  collected: <green>Collected <white><amount></white> items. <gray><remaining> item(s) remain pending.
+  collected-all: <green>Collected <white><amount></white> items from <white><entries></white> entries.
+  collected-all-partial: <yellow>Collected <white><amount></white> items from <white><entries></white> entries. <gray>Some items remain because your inventory is full.
+  busy: <red>Another collection is already running. Please try again.
+  inventory-full: <red>Your inventory has no room for those items. Nothing was removed; free some space and try again.
+  nothing: <gray>There are no pending proceeds to collect right now.
+mailbox:
+  empty: <gray>No recovered items are waiting.
+notify:
+  header: <gold>You have <white><total></white> item(s) waiting in <white><shops></white> shop(s).
+  entry: '<gray> • <white><shop></white><gray>: <white><count></white> item(s) <dark_gray>(<items>)</dark_gray>'
+  more: <gray> • …and <white><count></white> more shop(s).
+  items-more: ', +<count> more'
+  footer: <yellow>These items are stored, not yet delivered. Open <white>/shop</white> and use <white>Pending proceeds</white> or <white>Recovered items</white> to collect them.
+trade:
+  success: <green>Traded <white><pay></white> for <white><receive></white>.
+  failed:
+    disabled: <red>This shop is disabled.
+    orphaned: <red>This shop's chest is missing. The owner must relink it in shop settings.
+    offer-missing: <red>That offer no longer exists.
+    owner: <red>You cannot trade with your own shop.
+    payment: <red>You do not have the required payment items.
+    inventory-full: <red>Your inventory cannot hold the items from this trade.
+    out-of-stock: <red>The shop does not have enough stock for that trade.
+    storage-full: <red>The shop's stock is full and cannot accept your items.
+    busy: <red>Another transaction is already running. Please wait a moment.
+    cursor: <red>Place the item on your cursor back into your inventory first.
+    gamemode: <red>Trading is not allowed in this game mode.
+    internal: <red>The transaction could not be completed. Nothing was changed.
+    expired: <red>That offer has expired.
+    maintenance: <red>Trading is temporarily disabled for maintenance. Please try again later.
+protect:
+  chest: <red>This chest is a shop container. Use the shop GUI instead.
+  sign: <red>This sign is protected by a shop. Use the shop GUI to manage or delete the shop.
+  sign-support: <red>That block supports a shop sign and cannot be broken.
+  double-chest: <red>You cannot merge a chest with a shop chest.
+  unknown-shop: <red>This block is tagged to a missing shop. An administrator must repair or remove the shop record.
+admin:
+  scan-done: <green>Anchor scan complete. <white><count></white> shop(s) need relinking.
+  reloaded: <green>Configuration and messages reloaded. Restart the server for startup-only settings to change.
+  maintenance-usage: '<red>Usage: /shopadmin maintenance <on|off|toggle>'
+  maintenance-set: <green>Maintenance mode is now <white><state></white>.
+  maintenance-state-on: <red>ON
+  maintenance-state-off: <green>OFF
+  signs-refreshed: <green>Shop anchors scanned and sign text refreshed.
+gui:
+  back: <yellow>Back
+  close: <red>Close
+  confirm:
+    title: <gold>Confirm
+    prompt: <yellow>Please confirm
+    'yes': <green>Yes, continue
+    yes-lore: <gray>This performs the action.
+    'no': <red>No, go back
+    no-lore: <gray>Nothing will change.
+    action: <green>Confirm
+  cancel: <red>Cancel
+  previous: <yellow>Previous page
+  next: <yellow>Next page
+  page: <gray>Page <page>
+  shops:
+    title: <gold>My Shops
+    info: <gold>BarterShop
+    info-lore: <gray>Item-for-item chest shops.
+    owner: '<gray>Owner: <white><owner>'
+    location: '<gray>Chest: <white><world> <x>, <y>, <z>'
+    offers: '<gray>Offers: <white><count>'
+    stock: '<gray>Stock slots: <white><used></white><gray>/<white><capacity>'
+    pending: '<gray>Pending items: <white><count>'
+    enabled: <green>Enabled
+    disabled: <red>Disabled
+    orphaned: <red>Anchor block missing — relink in settings
+    click: <yellow>Click to manage
+    create: <green>Create a shop
+    create-lore: <gray>Start from a sign with [shop] on line 1.
+    recovered: <gold>Recovered items
+    recovered-lore: <gray>Stock and proceeds from deleted shops.
+    admin: <red>Admin tools
+    admin-lore: <gray>Shop overview, anchor scan and audit log.
+    empty: <gray>No shops yet
+    empty-lore: <gray>Use the Create a shop guide to get started.
+    language: <yellow>Language
+    language-lore: '<gray>Current: <white><language>'
+    transfers: <yellow>Transfer requests
+    transfers-lore: <gray>Review incoming and outgoing ownership transfers.
+    proceeds: <gold>Pending proceeds
+    proceeds-lore: <gray>All shops in one overview.
+    trades: '<gray>Trades: <white><count>'
+  create:
+    title: <gold>Create a Shop
+    sign: <yellow>1. Place a sign
+    sign-lore1: <gray>Write <white>[shop]</white> on the first line.
+    sign-lore2: <gray>Standing signs must sit on top of the chest;
+    sign-lore3: <gray>wall signs attach directly to the chest.
+    chest: <yellow>2. Use an empty chest
+    chest-lore1: <gray>The chest must be completely empty.
+    chest-lore2: <gray>Its size decides the shop's storage slots.
+    chest-lore3: <gray>You never open the chest again.
+    gui: <yellow>3. Configure in GUIs
+    gui-lore1: <gray>Select items, exact quantities, buy/sell mode
+    gui-lore2: <gray>and matching rules with clicks only.
+    gui-lore3: <gray>No special items or chat commands are needed.
+    tips: <gold>Good to know
+    tip1: <gray>Only you can edit the shop.
+    tip2: <gray>Hoppers and other players cannot touch the chest.
+    tip3: <gray>Offer items must be deposited into stock.
+    tip4: <gray>Earnings are collected from pending proceeds.
+  setup:
+    title: <gold>Shop Setup
+    info: <gold>Shop setup
+    info1: <gray>1. Link an empty chest.
+    info2: <gray>2. Confirm to create the shop.
+    info3: <gray>3. Add offers and deposit stock.
+    info4: <gray>The sign only opens this GUI.
+    sign: <yellow>Shop sign
+    sign-lore: '<gray>Sign: <white><sign>'
+    chest: <yellow>Shop chest
+    chest-none: <red>No chest linked yet.
+    chest-linked: '<gray>Chest: <white><chest>'
+    chest-capacity: <gray>Empty chest required; size sets capacity.
+    chest-click: <yellow>Click to choose a chest.
+    confirm: <green>Create shop
+    confirm-lore: <gray>Create the shop with the linked chest.
+    confirm-no-chest: <gray>Link a chest first.
+    cancel: <red>Cancel setup
+    cancel-lore: <gray>The sign claim remains for 7 days.
+  hub:
+    title: <gold>Shop
+    info-owner: '<gray>Owner: <white><owner>'
+    info-location: '<gray>Chest: <white><world> <x>, <y>, <z>'
+    orphaned: <red>Chest/sign anchor missing — relink in Settings.
+    orphaned-title: <red>Missing anchor
+    orphaned-lore: <gray>Trades are paused until the chest is relinked.
+    orphaned-lore2: <gray>Your stock is safe in the database.
+    admin-mode: '<red>Admin view: actions are logged.'
+    offers: <yellow>Trade offers
+    offers-lore: <gray><count> offer(s). Customers see these.
+    stock: <yellow>Shop stock
+    stock-lore: '<gray>Slots: <white><used></white><gray>/<white><capacity>'
+    stock-lore2: <gray>Deposit items customers will receive.
+    proceeds: <gold>Pending proceeds
+    proceeds-lore: <gray><count> item(s) waiting to be collected.
+    settings: <yellow>Settings
+    settings-lore: <gray>Enable, relink, transfer or delete.
+    history: <yellow>Transaction history
+    history-lore: <gray>Recent trades, collections and changes.
+    preview: <aqua>Preview customer view
+    preview-lore: <gray>See exactly what customers see.
+    info-chests: '<gray>Chests: <white><count></white><gray> · Slots: <white><capacity>'
+    warning-threshold: <gray>Low-stock warning at <white><count>
+    info-sign-none: '<gray>Sign: <red>not linked'
+    maintenance: <red>Global maintenance mode is active.
+    chests: <yellow>Linked chests
+    chests-lore: <gray><count> chest(s) provide the shop storage.
+    stats: <gold>Statistics
+    stats-lore: <gray><trades> completed trade(s).
+  offers:
+    title: <gold>Trade Offers
+    mode: '<gray>Mode: <white><mode>'
+    pay: '<gray>Customer pays: <white><amount>x <item>'
+    receive: '<gray>Customer receives: <white><amount>x <item>'
+    stock: '<gray>Stock: <white><stock></white> <gray>(needs <white><needed></white>)'
+    matching: '<gray>Payment matching: <white><mode>'
+    click-edit: <yellow>Click to edit
+    empty: <gray>No offers yet
+    empty-lore: <gray>Add an offer, then stock the items.
+    add: <green>Add offer
+    add-lore: <gray>Configure an item-for-item trade.
+    expired: <red>Expired on <white><time></white>
+    expires: '<gray>Expires: <white><time>'
+    low-stock: <red>Low stock warning is active.
+  offer-editor:
+    title-new: <gold>New Offer
+    title-edit: <gold>Edit Offer
+    info: <gold>Offer configuration
+    info1: '<gray>SELL: customer pays you; payment becomes'
+    info2: '<gray>pending proceeds. BUY: customer''s items go'
+    info3: <gray>into stock and you pay from stocked items.
+    mode: '<yellow>Mode: <white><mode>'
+    mode-lore: '<gray>Selling: you supply the receive item.'
+    mode-lore2: '<gray>Buying: you supply the payment item.'
+    mode-click: <yellow>Click to toggle mode
+    receive-item-none: <red>No item selected
+    receive-amount: <yellow>Receive amount
+    item-click: <yellow>Click to choose the item.
+    amount-click: <yellow>Click to change the amount.
+    exact: <white>exact metadata
+    any: <white>same material
+    matching: '<yellow>Payment matching: <white><mode>'
+    matching-lore: '<gray>Exact requires the same item components:'
+    matching-lore2: <gray>enchantments, name, lore, damage, potion data, custom model data
+    matching-lore3: <gray>and persistent data.
+    save: <green>Save offer
+    save-lore: <gray>Validate and save this offer.
+    save-incomplete: <red>Select both items first.
+    delete: <red>Delete offer
+    delete-lore: <gray>Removes the offer; stock is untouched.
+    delete-confirm: Delete this offer? Customers will no longer see it.
+    mode-sell: Selling
+    mode-buy: Buying
+    payments: <yellow>Customer pays <white>(<count>)
+    payments-none: <red>No payment items selected
+    payments-edit: <yellow>Click to edit the payment requirements.
+    payment-line: <gray>• <white><amount>x <item>
+    expiry: '<yellow>Offer expiry: <white><duration>'
+    expiry-lore: <gray>Expired offers cannot be traded and never delete stock.
+    expiry-click: <yellow>Click to choose the next duration.
+    expiry-never: <white>never
+    expiry-hours: <white><hours> hour(s)
+  amount:
+    title: <gold>Choose Amount
+    current: '<yellow>Amount: <white><amount>'
+    current-lore: <gray>≈ <white><stacks></white> stacks of 64
+    minus64: <red>-64
+    minus16: <red>-16
+    minus1: <red>-1
+    plus1: <green>+1
+    plus16: <green>+16
+    plus64: <green>+64
+    set1: <yellow>Set 1
+    set16: <yellow>Set 16
+    set64: <yellow>Set 64
+    set576: <yellow>Set 576 (9 stacks)
+    set1728: <yellow>Set 1728 (27 stacks)
+    setmax: <yellow>Set max (<amount>)
+    click: <gray>Click to apply.
+    confirm-lore: <gray>Use <white><amount></white> items.
+  picker:
+    title: <gold>Choose Item
+    inventory: <yellow>Pick from your inventory
+    inventory-lore1: <gray>Click any item in your inventory.
+    inventory-lore2: <gray>The item itself is not consumed or moved.
+    inventory-lore3: <gray>The clicked stack size becomes the suggested amount.
+    catalog-click: <yellow>Click to select this material.
+    toggle: '<yellow>Source: <white><mode>'
+    toggle-lore: <gray>Switch between your inventory and the catalog.
+    mode-catalog: <white>catalog
+    mode-inventory: <white>my inventory
+  customer:
+    title: <gold>Shop
+    owner: '<gray>Owner: <white><owner>'
+    trades: '<gray>Offers: <white><count>'
+    info-lore: <gray>All trades are item-for-item.
+    orphaned: <red>This shop is temporarily unavailable.
+    unavailable: <red>Shop unavailable
+    mode: '<gray>Mode: <white><mode>'
+    pay: '<gray>You pay: <white><amount>x <item>'
+    receive: '<gray>You receive: <white><amount>x <item>'
+    matching: '<gray>Payment matching: <white><mode>'
+    click: <yellow>Click to review this trade.
+    out-of-stock: <red>Out of stock
+    empty: <gray>No offers
+    empty-lore: <gray>The owner has not configured a trade yet.
+    available: '<gray>Available: <white><stock>'
+    expires: '<gray>Expires: <white><time>'
+    expired: <red>Expired
+    expired-action: <red>This offer can no longer be traded.
+    maintenance: <red>Trading is temporarily disabled.
+  trade-confirm:
+    title: <gold>Confirm Trade
+    pay-lore: <gray>You hand over <white><amount></white> of this item.
+    receive-lore: <gray>You receive <white><amount></white> of this item.
+    arrow: <yellow>Trade
+    arrow-lore: <gray>Items exchange directly between inventories.
+    confirm: <green>Confirm trade
+    confirm-lore: <gray>Payment and delivery are atomic.
+    owner: <red>You cannot trade with your own shop.
+    unavailable: <red>This trade cannot be completed right now.
+    cancel: <red>Go back
+    info: <yellow>Trade summary
+    info-lore: <gray>Check every item before confirming.
+    info-sell: <gray>You pay the owner and receive shop stock.
+    info-buy: <gray>You supply items and receive the owner’s payment.
+    expires: '<gray>Valid until: <white><time>'
+    expired: <red>This offer has expired.
+  stock:
+    title: <gold>Shop Stock
+    capacity: <yellow>Storage
+    capacity-lore: '<gray>Slots used: <white><used></white><gray>/<white><capacity>'
+    capacity-lore2: '<gray>Total items: <white><items>'
+    stack-amount: '<gray>Amount: <white><amount>'
+    stack-withdraw-all: '<yellow>Left-click: withdraw stack'
+    stack-withdraw-one: '<yellow>Right-click: withdraw one'
+    empty: <gray>Stock is empty
+    empty-lore: <gray>Deposit items customers will receive.
+    deposit: <green>Deposit items
+    deposit-lore: <gray>Click stacks in your inventory to deposit.
+  deposit:
+    title: <gold>Deposit Stock
+    info: <gold>Click items to deposit
+    lore1: <gray>Click a stack in your inventory to deposit it.
+    lore2: <gray>Items are stored safely in the shop database.
+    lore3: <gray>Close this screen when you are done.
+    capacity: <yellow>Storage
+    capacity-lore: '<gray>Slots: <white><used></white><gray>/<white><capacity></white> <gray>• Items: <white><items>'
+  proceeds:
+    title: <gold>Pending Proceeds
+    stack-lore: '<gray>Amount: <white><amount>'
+    collect-hint: <yellow>Click to collect everything that fits.
+    collect: <green>Collect all
+    collect-lore1: <gray>Moves as many items as fit into your inventory.
+    collect-lore2: <gray>Everything else stays pending. <white><items></white> item(s) waiting.
+    empty: <gray>No pending proceeds
+    history: <yellow>History
+    history-lore: <gray>See trades and collections.
+  mailbox:
+    title: <gold>Recovered Items
+    item-lore: '<gray>Amount: <white><amount>'
+    collect: <green>Collect recovered items
+    collect-lore1: <gray>Moves items into your inventory.
+    collect-lore2: <gray>Anything that does not fit stays here.
+    history: <yellow>History
+    history-lore: <gray>See recovery and collection entries.
+  settings:
+    title: <gold>Shop Settings
+    info: <yellow>Shop settings
+    info-lore: '<gray>Owner: <white><owner>'
+    enabled: <green>enabled
+    disabled: <red>disabled
+    toggle: <yellow>Shop is <white><state>
+    toggle-lore: <yellow>Click to toggle whether customers can trade.
+    relink-sign: <yellow>Relink sign
+    relink-sign-lore1: <gray>Use this if the physical shop sign was lost.
+    relink-sign-lore2: <gray>Place a sign with [shop] on line 1.
+    transfer: <red>Transfer ownership
+    transfer-lore: <gray>Choose an online player; they must accept.
+    transfer-lore2: <gray>Pending proceeds stay with the current owner.
+    transfer-confirm: Send a transfer request for this shop to <player>? They must accept.
+    delete: <red>Delete shop
+    delete-lore1: <gray>Stock and pending proceeds move to
+    delete-lore2: <gray>your Recovered Items mailbox.
+    delete-admin: <red>Admin deletion is logged and items go to the owner.
+    delete-owner: <gray>This cannot be undone.
+    delete-confirm: Delete this shop? Stock and proceeds are preserved in Recovered Items.
+    chests: <yellow>Linked chests
+    chests-lore: <gray><count> of <max> chest(s). Click to manage.
+    warning: '<yellow>Low-stock warnings: <white><count>'
+    warning-lore: <gray>Notify you when a shop item runs low. 0 disables.
+    warning-click: <yellow>Click to choose the next threshold.
+  players:
+    title: <gold>Choose a Player
+    choose: <yellow>Click to choose this player.
+    empty: <gray>No other players online
+    empty-lore: <gray>Ownership transfer needs an online player.
+  history:
+    title: <gold>Transaction History
+    time: <gray><time>
+    actor: '<gray>By: <white><actor>'
+    empty: <gray>No history yet
+    type:
+      trade: <white>Trade
+      collect: <gold>Collection
+      stock: <yellow>Stock change
+      recovery: <aqua>Recovery
+      delete: <red>Deletion
+      transfer: <light_purple>Ownership transfer
+      config: <yellow>Configuration
+      other: <white>Activity
+  audit:
+    title: <gold>Audit Log
+    actor: '<gray>Actor: <white><actor>'
+    time: <gray><time>
+    empty: <gray>No audit entries
+  admin:
+    title: <gold>BarterShop Admin
+    info: <gold>Administration
+    info-lore: '<gray>Shops loaded: <white><count>'
+    shops: <yellow>All shops
+    shops-lore: <gray>Inspect, disable, relink or delete any shop.
+    scan: <yellow>Scan anchors
+    scan-lore: <gray>Check chests and signs; mark missing anchors.
+    audit: <yellow>Audit log
+    audit-lore: <gray>Privileged actions are recorded.
+    recovery: <gold>Recovery procedure
+    recovery-lore1: <gray>Deleting a shop never drops or deletes items.
+    recovery-lore2: <gray>Stock and proceeds move to the owner's
+    recovery-lore3: <gray>Recovered Items mailbox.
+    recovery-lore4: <gray>Admins cannot take items from mailboxes.
+    rules: <yellow>Admin rules
+    rules-lore1: <gray>Every override is permission-checked,
+    rules-lore2: <gray>logged to the audit table and visible above.
+    rules-lore3: <gray>Relink a missing chest instead of deleting
+    rules-lore4: <gray>whenever possible; owner stock is preserved.
+    shops-title: <gold>All Shops
+    shop-owner: '<gray>Owner: <white><owner>'
+    shop-location: '<gray>Chest: <white><world> <x>, <y>, <z>'
+    shop-stock: '<gray>Stock slots: <white><used></white><gray>/<white><capacity>'
+    shop-proceeds: '<gray>Pending items: <white><items>'
+    shop-orphaned: <red>Missing anchor
+    no-shops: <gray>No shops loaded
+    maintenance: '<yellow>Maintenance: <white><state>'
+    maintenance-on: <red>ON
+    maintenance-off: <green>OFF
+    maintenance-lore: <gray>Disables all trades globally without touching data.
+    maintenance-click: <yellow>Click to toggle maintenance mode.
+  payments:
+    title: <gold>Payment Requirements
+    info: <yellow>What the customer pays
+    info-lore: <gray><count> of <max> item types selected.
+    amount: '<gray>Amount: <white><amount>'
+    matching: '<gray>Matching: <white><mode>'
+    edit: <yellow>Click to edit this requirement.
+    empty: <gray>No payment items yet
+    empty-lore: <gray>Add at least one item type.
+    add: <green>Add payment item
+    add-lore: <gray>Choose another item the customer must provide.
+    save: <green>Apply payments
+    save-lore: <gray>Return to the offer editor with this list.
+  payment:
+    title: <gold>Edit Payment Item
+    info: <yellow>Payment requirement
+    info-lore: <gray>All required items are checked together.
+    item-lore: <yellow>Click to change the item.
+    amount: '<yellow>Amount: <white><amount>'
+    amount-lore: <yellow>Click to change the required amount.
+    matching: '<yellow>Matching: <white><mode>'
+    matching-lore: <gray>Exact matches metadata; loose matches the material.
+    remove: <red>Remove requirement
+    remove-lore: <gray>The other requirements are unchanged.
+    remove-confirm: Remove this payment requirement?
+    save-lore: <gray>Apply this requirement.
+  chests:
+    title: <gold>Linked Chests
+    unit: <yellow>Chest <number>
+    location: '<gray>Location: <white><world> <x>, <y>, <z>'
+    slots: <gray>Provides <white><slots></white> storage slots.
+    primary: <gray>Primary chest — cannot be unlinked here.
+    unlink-hint: <yellow>Click to unlink this chest.
+    unlink-confirm: Unlink this chest? Stored items stay in the shop, but capacity is reduced.
+    info: <yellow>Shop storage
+    info-lore: '<gray>Slots used: <white><used></white><gray>/<white><capacity>'
+    info-lore2: '<gray>Maximum chests: <white><max>'
+    relink-primary: <yellow>Replace primary chest
+    relink-primary-lore: <gray>Use a new empty chest as the primary anchor.
+    add: <green>Link another chest
+    add-lore: <gray>The chest must be empty and unclaimed.
+  stats:
+    title: <gold>Shop Statistics
+    info: <gold>Activity overview
+    trades: '<gray>Completed trades: <white><count>'
+    items-in: '<gray>Items received: <white><count>'
+    items-out: '<gray>Items delivered: <white><count>'
+    customers: '<gray>Unique customers: <white><count>'
+    last-trade: '<gray>Last trade: <white><time>'
+    no-trades: <gray>No trades yet.
+    recent: <yellow>Recent activity
+    recent-lore: <gray>Open the transaction history.
+  proceeds-overview:
+    title: <gold>Pending Proceeds
+    info: <gold>All pending items
+    info-lore: <gray><total> item(s) across <shops> entries.
+    amount: '<gray>Waiting: <white><count> item(s)'
+    line: <gray>• <white><amount>x <item>
+    more: <gray>• …
+    mailbox-hint: <yellow>Click to open Recovered Items.
+    mailbox-label: Recovered items
+    deleted-label: Deleted shop
+    open-hint: <yellow>Click to collect from this shop.
+    empty: <gray>Nothing pending
+    empty-lore: <gray>Collected items appear in your inventory.
+    collect: <green>Collect everything
+    collect-lore: <gray>Collects from every shop and the mailbox when space allows.
+  transfers:
+    title: <gold>Transfer Requests
+    shop: '<gray>Shop: <white><shop>'
+    from: '<gray>From owner: <white><player>'
+    to: '<gray>To: <white><player>'
+    expires: '<gray>Valid until: <white><time>'
+    expired: <red>Expired
+    accept-hint: <green>Click to accept ownership.
+    cancel-hint: <yellow>Click to cancel this request.
+    incoming: <green>Incoming transfer
+    outgoing: <yellow>Outgoing transfer
+    accept-confirm: Accept <shop> from <player>? Stock, chests and stats transfer; pending proceeds stay with the former owner.
+    cancel-confirm: Cancel the transfer request for <shop>?
+    empty: <gray>No transfer requests
+    empty-lore: <gray>Incoming and outgoing requests appear here.
+  preferences:
+    title: <gold>Preferences
+    info: <gold>Your preferences
+    info-lore: <gray>These settings apply only to you.
+    language: '<yellow>Language: <white><language>'
+    language-lore: <gray>Messages and GUIs switch immediately.
+    language-click: <yellow>Click to switch language.
+transfer:
+  requested: <gold><player></gold> wants to transfer the shop <white><shop></white> to you. Open <white>/shop → Transfer requests</white> to accept or decline.
+  request-sent: <green>Transfer request sent to <white><player></white>. The shop changes hands only after they accept.
+  accepted: <green>You now own <white><shop></white>. Its stock and linked chests were transferred with it.
+  completed: <yellow><player></yellow> accepted your transfer request for <white><shop></white>. Pending proceeds were moved to Recovered Items.
+  cancelled: <yellow>Transfer request cancelled.
+  cancelled-other: <yellow>The transfer request for <white><shop></white> was cancelled.
+  missing: <red>That transfer request no longer exists.
+  expired: <red>That transfer request has expired.
+  stale: <red>The shop owner changed, so this request is no longer valid.
+  self: <red>You cannot transfer a shop to its current owner.
+  limit: <red>You already own the maximum of <limit> shops. Free a slot before accepting this transfer.
+  pending-join: <gold>You have <white><count></white> pending shop transfer request(s). Open /shop and choose Transfer requests.
+maintenance:
+  enabled: <red>Trading is temporarily disabled for maintenance. Shop management and collecting proceeds still work.
+  disabled: <green>Trading is available again.

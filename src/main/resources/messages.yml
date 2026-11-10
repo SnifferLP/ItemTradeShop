@@ -1,0 +1,11 @@
+# Optional English message overrides.
+#
+# The complete English defaults live in messages_en.yml inside the plugin jar.
+# Add only the keys you want to change here, for example:
+#
+# prefix: "<gold>My Server <dark_gray>» </dark_gray>"
+# general:
+#   no-permission: "<red>You cannot do that here."
+#
+# Missing keys always fall back to messages_en.yml. German overrides belong in
+# messages_de.yml. Delete this file to regenerate the comment-only template.

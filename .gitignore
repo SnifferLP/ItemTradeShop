@@ -1,0 +1,64 @@
+# Build output (never commit build artifacts or reports)
+target/
+*.class
+
+# Local tooling state
+.freebuff/
+
+# Environment and secret files
+.env
+.env.*
+!.env.example
+
+# IDE and editor metadata
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+nbproject/
+out/
+*.swp
+*~
+
+# Local databases and SQLite runtime files
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Local test server and logs
+server/
+run/
+plugins/
+logs/
+crash-reports/
+*.log
+
+# Temporary files and OS metadata
+*.tmp
+*.bak
+*.orig
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Credentials, keys, keystores and certificates
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+*.crt
+*.secret
+
+# Private local overrides and Maven scratch files
+*.local.yml
+dependency-reduced-pom.xml
+release.properties
+.flattened-pom.xml
